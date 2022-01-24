@@ -37,6 +37,10 @@ const clothSchema = new mongoose.Schema({
         type: String,
         trim: true,
         required: [true, 'Please enter the outfit category']
+    },
+    addedOn: {
+        type: Date,
+        default: Date.now()
     }
 });
 
