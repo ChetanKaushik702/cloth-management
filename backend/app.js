@@ -18,6 +18,12 @@ const cloth = require('./routes/clothRoutes');
 app.use('/api/v1/user', user);
 app.use('/api/v1/outfit', cloth);
 
+app.get('/', (req, res) => {
+    res.status(200).json({
+        message: 'Welcome to the store!!'
+    });
+});
+
 app.use(errorMiddleware);
 
 module.exports = app;
