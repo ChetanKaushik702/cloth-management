@@ -41,6 +41,10 @@ const clothSchema = new mongoose.Schema({
     addedOn: {
         type: Date,
         default: Date.now()
+    },
+    createdBy: {
+        type: mongoose.SchemaTypes.ObjectId,
+        required: [true, 'Please enter user id']
     }
 });
 

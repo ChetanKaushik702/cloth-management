@@ -1,5 +1,6 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
+const fileUpload = require('express-fileupload');
 
 // error middleware
 const errorMiddleware = require('./middleware/error');
@@ -8,6 +9,7 @@ const app = express();
 
 app.use(express.json());
 app.use(cookieParser());
+app.use(fileUpload({ useTempFiles: true }));
 
 // routes
 const user = require('./routes/userRoutes');
